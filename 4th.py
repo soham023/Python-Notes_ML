@@ -111,3 +111,48 @@ print(acc1._BankAcc__bal)
 
 
 # Inheritance
+class Employee :
+    st_time = "10AM"
+    e_time = "6PM"
+
+class Teacher(Employee):
+    def __init__(self, subject):
+        self.subject = subject
+class Admin(Employee):
+    def __init__(self, role):
+        self.role = role
+# multilevel
+class Accountant(Admin):
+    def __init__(self, role, salary):
+    #    calling constructor of parent class
+        super().__init__(role)
+        self.salary = salary
+
+t1 = Teacher("Math")
+print(t1.subject, t1.st_time, t1.e_time)
+
+acc1 = Accountant("Engineer", 24000)
+
+print(acc1.role, acc1.salary, acc1.st_time, acc1.e_time)
+# Types of inheritance
+# 1. single Level 
+# 2. MultiLevel
+
+# 3. Multiple
+class Prof:
+    def __init__(self, salary):
+        self.salary = salary
+
+class ClgStudent:
+    def __init__(self, gpa):
+        self.gpa = gpa
+
+class TA(Prof, ClgStudent):
+    def __init__(self, salary, gpa):
+        # 1st parent constructor using super
+        super().__init__( salary)
+        # 2nd parent constructor using the ClassName
+        ClgStudent.__init__(self, gpa)
+        self.name = name
+
+
