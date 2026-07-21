@@ -48,4 +48,42 @@ with open ("sample.txt", "r") as f: # f is just a variable
 
 # deleting a file
 import os
-os.remove("sam.txt")
+# os.remove("sam.txt")
+
+# Exception Handling
+# try, except, else, finally
+
+try :
+    
+    x =  int(input("Enter x"))
+    ans = 10/x
+except ZeroDivisionError:
+    # zero division error
+    print("Cant enter 0")
+except ValueError:
+    print("Invalid input")
+else:
+    print(f"ans : {ans}")
+
+finally:
+    print("End of program")
+
+
+squares = []
+
+for i in range (6):
+    squares.append(i*i)
+
+print (squares)
+
+# list comprehension
+sq = [i*i for i in range(6)]
+print(sq)
+
+# with cond 
+oddsq = [i*i for i in range(6) if i%2 != 0]
+print (oddsq)
+
+nums = [9,1,4,-2,1,-4,-7]
+nums = [0 if i < 0 else i for i in nums]
+print(nums)

@@ -34,6 +34,10 @@ print ("{a} values of vars {a} & {b} ".format(a = 4, b = 12))
 # F-Strings --> Literal String InterPolation 
 print ( f"fstring-sum of {a} & {b} is {a + b}")
 
+# Difference b/w list, tuple, dictionary
+# List: Mutable, ordered collection of elements
+# Tuple: Immutable, ordered collection of elements
+# Dictionary: Mutable, unordered collection of key-value pairs
 
 # Lists
 marks = [98, 92,93, 91,94]
