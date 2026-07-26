@@ -17,9 +17,9 @@ for i in students:
 #  def__init__(self):
 # self means it's storing the current instance of the class/storing reference of current object.
 class Studs:
-    college = "ABC Collrge" #class attribute
+    college = "ABC Collrge" #class attribute > belongs to the class and shared by all instances of the class
     def __init__(self, name, cgpa):
-        self.name = name #instance attribute
+        self.name = name #instance attribute (name in self.name) > belongs to individual object
         self.cgpa = cgpa
 
     # class methods --> it can access only class attributes
@@ -46,7 +46,8 @@ class Studs:
         print(finalp)
 
 
-
+# class method vs static method
+# class method can access class attributes and instance attributes but static method can't access any attributes
 
 stuu1 = Studs("Soham", 9.3)  
 print(stuu1.name)
@@ -156,3 +157,50 @@ class TA(Prof, ClgStudent):
         self.name = name
 
 
+
+# magic methods
+# special methods
+ #__init__ --> constructor
+ #__str__ --> string representation of the object
+ #__add__ --> add 2 objects
+ #__len__ --> length of the object
+ #__eq__ --> compare 2 objects
+ #__gt__ --> greater than
+
+
+class Student:
+    school = "ABC"
+
+    def __init__(self, marks):
+        self._marks = marks
+
+    @property # getter method
+    def marks(self):
+        return self._marks   
+
+    @marks.setter # setter method
+    def marks(self, marks):
+        self._marks = marks
+
+
+student1 = Student(90)
+print(student1.marks)
+
+student1.marks = 95
+print(student1.marks)
+
+
+# Data Classes > helps to create classes that are mainly used to store data
+
+# they reduce boilerplate code by automatically generating special methods like __init__, __repr__, and __eq__ based on the class attributes.
+
+from dataclasses import dataclass
+
+@dataclass
+class Student:
+    name: str
+    age: int
+    gpa: float
+
+student1 = Student("Soham", 24, 9.3)
+print(student1)
